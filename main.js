@@ -58,3 +58,30 @@ console.log("Took: " + (finish - start) + " milliseconds.");
 console.log(result.toString());
 /* Bubble Sort */
 
+console.log("************************************************************");
+
+/* Selection Sort */
+function selectionSort(arrayForSort) {
+    var n = arrayForSort.length;
+    for (var i = 0; i < n; i++) {
+        var min = i;
+        for (var j = i; j < n; j++) {
+            if (arrayForSort[j] < arrayForSort[min]) {
+                min = j;
+            }
+        }
+        var temp = arrayForSort[min];
+        arrayForSort[min] = arrayForSort[i];
+        arrayForSort[i] = temp;
+    }
+    return arrayForSort;
+}
+
+var start = performance.now();
+var result = selectionSort(arr);
+var finish = performance.now();
+console.log("Selection Sort");
+console.log("Took: " + (finish - start) + " milliseconds.");
+console.log(result.toString());
+/* Selection Sort */
+
