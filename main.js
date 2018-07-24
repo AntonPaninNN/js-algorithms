@@ -85,3 +85,23 @@ console.log("Took: " + (finish - start) + " milliseconds.");
 console.log(result.toString());
 /* Selection Sort */
 
+console.log("************************************************************");
+
+/* Insertion Sort */
+function insertionSort(arrayForSort) {
+    var n = arrayForSort.length;
+    for (var i = 0; i < n; i++) {
+        var v = arrayForSort[i], j = i - 1;
+        while (j >= 0 && arrayForSort[j] > v) { arrayForSort[j + 1] = arrayForSort[j]; j--; }
+        arrayForSort[j + 1] = v;
+    }
+    return arrayForSort;
+}
+
+var start = performance.now();
+var result = insertionSort(arr);
+var finish = performance.now();
+console.log("Insertion Sort");
+console.log("Took: " + (finish - start) + " milliseconds.");
+console.log(result.toString());
+/* Insertion Sort */

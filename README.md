@@ -40,3 +40,20 @@ function selectionSort(arrayForSort) {
     return arrayForSort;
 }
 ```
+
+## 3. Insertion Sort
+
+![Insertion Sort](img/insertion_sort.gif)
+
+```javascript
+function insertionSort(arrayForSort) {
+    var n = arrayForSort.length;
+    for (var i = 0; i < n; i++) {
+        var v = arrayForSort[i], j = i - 1;
+        while (j >= 0 && arrayForSort[j] > v) { arrayForSort[j + 1] = arrayForSort[j]; j--; }
+        arrayForSort[j + 1] = v;
+    }
+    return arrayForSort;
+  }
+}
+```
