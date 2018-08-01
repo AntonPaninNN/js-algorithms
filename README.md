@@ -55,5 +55,25 @@ function insertionSort(arrayForSort) {
     }
     return arrayForSort;
   }
+```
+
+## 4. Shell Sort
+
+![Insertion Sort](img/shell.gif)
+
+```javascript
+function shellSort(arrayForSort)
+{
+    var n = arrayForSort.length, i = Math.floor(n/2);
+    while (i > 0)
+     { for (var j = 0; j < n; j++)
+        { var k = j, t = arrayForSort[j];
+          while (k >= i && arrayForSort[k-i] > t)
+           { arrayForSort[k] = arrayForSort[k-i]; k -= i; }
+           arrayForSort[k] = t;
+        }
+      i = (i==2) ? 1 : Math.floor(i*5/11);
+     }
+    return arrayForSort;
 }
 ```
