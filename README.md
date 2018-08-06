@@ -59,7 +59,7 @@ function insertionSort(arrayForSort) {
 
 ## 4. Shell Sort
 
-![Insertion Sort](img/shell.gif)
+![Shell Sort](img/shell.gif)
 
 ```javascript
 function shellSort(arrayForSort)
@@ -75,5 +75,25 @@ function shellSort(arrayForSort)
       i = (i==2) ? 1 : Math.floor(i*5/11);
      }
     return arrayForSort;
+}
+```
+
+## 5. Counting Sort
+
+![Counting Sort](img/counting_sort.gif)
+
+```javascript
+function countingSort(arrayForSort)
+{   
+    var n = arrayForSort.length, Count = [], B = [];
+    for (var i = 0; i < n; i++) Count[ i ] = 0;
+    for (var i = 0; i < n-1; i++)
+     { for (var j = i+1; j < n; j++)
+        { if (arrayForSort[ i ] < arrayForSort[j]) Count[j]++;
+          else Count[ i ]++;
+        }
+     }
+    for (var i = 0; i < n; i++) B[Count[ i ]] = arrayForSort[ i ];
+    return B;
 }
 ```

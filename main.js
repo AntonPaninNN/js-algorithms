@@ -131,3 +131,28 @@ console.log("Shell Sort");
 console.log("Took: " + (finish - start) + " milliseconds.");
 console.log(result.toString());
 /* Shell Sort */
+
+console.log("************************************************************");
+
+/* Counting Sort */
+function countingSort(arrayForSort)
+{   
+    var n = arrayForSort.length, Count = [], B = [];
+    for (var i = 0; i < n; i++) Count[ i ] = 0;
+    for (var i = 0; i < n-1; i++)
+     { for (var j = i+1; j < n; j++)
+        { if (arrayForSort[ i ] < arrayForSort[j]) Count[j]++;
+          else Count[ i ]++;
+        }
+     }
+    for (var i = 0; i < n; i++) B[Count[ i ]] = arrayForSort[ i ];
+    return B;
+}
+
+var start = performance.now();
+var result = countingSort(arr);
+var finish = performance.now();
+console.log("Counting Sort");
+console.log("Took: " + (finish - start) + " milliseconds.");
+console.log(result.toString());
+/* Counting Sort */
